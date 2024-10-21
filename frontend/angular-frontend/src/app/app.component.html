@@ -1,8 +1,23 @@
-<h1>
-  Contenido del response
-</h1>
+<form (ngSubmit)="addUser()">
+  <input [(ngModel)]="firstName" name="firstName" placeholder="First Name" required />
+  <input [(ngModel)]="lastName" name="lastName" placeholder="Last Name" required />
+  <input [(ngModel)]="age" name="age" type="number" placeholder="Age" required />
+  <button type="submit">Add User</button>
+</form>
 
-<div *ngFor="let item of data">
-  <p>{{item.name}} {{item.lastname}} , {{item.age}} </p> 
-
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+</table>
