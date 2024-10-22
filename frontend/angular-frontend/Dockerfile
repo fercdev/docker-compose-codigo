@@ -1,26 +1,26 @@
 #para obtener la imagen base
-FROM node:16-alpine AS builder
+#FROM node:16-alpine AS builder
 
 #para definir el directorio de trabajo
-WORKDIR /app
+#WORKDIR /app
 
 #para copiar el archivo de dependencias del proyecto
-COPY package*.json /app/
+#COPY package*.json /app/
 
 #para instalar las dependencias del proyecto
-RUN npm install
+#RUN npm install
 
 #para copiar el codigo del proyecto
-COPY . /app
+#COPY . /app
 
 #para construir la aplicacion angular
-RUN npm run build --prod
+#RUN npm run build --prod
 
 #etapa de nginx
 FROM nginx:alpine
 
 #copiar el contenikdo del build de angular
-COPY --from=builder /app/dist/angular-frontend /usr/share/nginx/html
+COPY dist/angular-frontend /usr/share/nginx/html
 
 #para exponer el puerto 80 del container
 EXPOSE 80

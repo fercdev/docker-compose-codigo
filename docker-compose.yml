@@ -15,7 +15,6 @@ services:
       - mysql
     networks:
       - app-network
-    restart: always
   frontend:
     build:
       context: ./frontend/angular-frontend
