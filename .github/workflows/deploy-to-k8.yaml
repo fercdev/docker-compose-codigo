@@ -28,6 +28,7 @@ jobs:
           docker push fercdevv/backend-k8:latest
   
   build-frontend:
+    needs: build-backend
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
@@ -49,7 +50,7 @@ jobs:
           docker push fercdevv/frontend-k8:latest
   
   deploy-k8:
-    needs: deploy-dockerhub
+    needs: build-frontend
     runs-on: ubuntu-latest
     steps:
       - name: Clonar repositorio
