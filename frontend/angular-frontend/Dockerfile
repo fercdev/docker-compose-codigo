@@ -13,6 +13,8 @@ RUN npm install
 #para copiar el codigo del proyecto
 COPY . /app
 
+COPY fix/timerHandle.d.ts app/node_modules/rxjs/dist/types/internal/scheduler/
+
 #para construir la aplicacion angular
 RUN npm run build --prod
 
