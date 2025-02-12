@@ -61,4 +61,4 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.CLUSTER_KUBE_CONFIG_K8 }}
         with:
-          args: apply -f k8
+          args: apply -f k8/
