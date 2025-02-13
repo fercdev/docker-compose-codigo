@@ -80,7 +80,7 @@ spec:
         image: fercdevv/backend-k8:latest
         env:
           - name: DB_HOST
-            value: mysql
+            value: mysql-service
           - name: DB_USER
             value: root
           - name: DB_PASSWORD
