@@ -78,6 +78,7 @@ spec:
       containers:
       - name: backend-container
         image: fercdevv/backend-k8:latest
+        imagePullPolicy: Always
         env:
           - name: DB_HOST
             value: mysql-service
@@ -122,6 +123,7 @@ spec:
       containers:
       - name: frontend-container
         image: fercdevv/frontend-k8:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
